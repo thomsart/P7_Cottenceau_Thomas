@@ -4,45 +4,43 @@
 
 .title
 {
+    border: 1px solid black;
     text-align: center;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
-    font-size: 5em;
+    font-size: 4em;
     color: crimson;
+    text-shadow: 6px 6px 6px black;
+    margin: 1px 0px 20px 1px;
 }
 /*
 
 */
 .intro
 {
+    border: 1px solid black;
     text-align: center;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5em;
     color: blueviolet;
+    margin: 1px 0px 1px 0px;
 }
 /*
 
 */
-.instruction1
+.png
 {
+    border: 1px solid black;
     text-align: center;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5em;
     color: blueviolet;
-}
-/*
-
-*/
-.instruction2
-{
-    text-align: center;
-    font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.5em;
-    color: blueviolet;
+    margin: 1px 0px 1px 0px;
 }
 /*
 */
 .input
 {
+    border: 1px solid black;
     text-align: center;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5em;
