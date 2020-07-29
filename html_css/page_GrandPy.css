@@ -1,0 +1,50 @@
+/*
+
+*/
+
+.title
+{
+    text-align: center;
+    font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
+    font-size: 5em;
+    color: crimson;
+}
+/*
+
+*/
+.intro
+{
+    text-align: center;
+    font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    color: blueviolet;
+}
+/*
+
+*/
+.instruction1
+{
+    text-align: center;
+    font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    color: blueviolet;
+}
+/*
+
+*/
+.instruction2
+{
+    text-align: center;
+    font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    color: blueviolet;
+}
+/*
+*/
+.input
+{
+    text-align: center;
+    font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    color: red;
+}
