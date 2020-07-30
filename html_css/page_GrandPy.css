@@ -1,6 +1,7 @@
-/*
-
-*/
+#block_page
+{
+    border: 1px solid black;
+}
 
 .title
 {
@@ -12,9 +13,13 @@
     text-shadow: 6px 6px 6px black;
     margin: 1px 0px 20px 1px;
 }
-/*
 
-*/
+
+
+#block_one
+{
+    border: 1px solid black;
+}
 .intro
 {
     border: 1px solid black;
@@ -24,25 +29,48 @@
     color: blueviolet;
     margin: 1px 0px 1px 0px;
 }
-/*
 
-*/
+#block_two
+{
+    display: flex;
+    border: 1px solid 400px;
+}
 .png
 {
-    border: 1px solid black;
-    text-align: center;
-    font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.5em;
-    color: blueviolet;
-    margin: 1px 0px 1px 0px;
+    width: 400px;
+    height: 400px;
+    background-color: lime;
 }
-/*
-*/
+.answers
+{
+    width: 400px;
+    height: 400px;
+    background-color: brown;
+}
+.map
+{
+    width: 400px;
+    height: 400px;
+    background-color: lightcoral;
+}
+
+#block_three
+{
+    display: flex;
+
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+}
+
 .input
 {
     border: 1px solid black;
     text-align: center;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5em;
-    color: red;
+    color: blueviolet;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
 }
+
