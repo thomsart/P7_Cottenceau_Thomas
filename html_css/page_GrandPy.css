@@ -1,10 +1,8 @@
-#block_page
-{
+#block_page{
     border: 1px solid black;
 }
 
-.title
-{
+.title{
     border: 1px solid black;
     text-align: center;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
@@ -16,60 +14,91 @@
 
 
 
-#block_one
-{
+#block_one{
     border: 1px solid black;
 }
-.intro
-{
+.intro{
     border: 1px solid black;
     text-align: center;
+    line-height: 25px;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5em;
     color: blueviolet;
     margin: 1px 0px 1px 0px;
 }
 
-#block_two
-{
+
+
+
+
+#block_two{
     display: flex;
     border: 1px solid 400px;
 }
-.png
-{
+.png{
     width: 400px;
     height: 400px;
+    padding: 0px 50px 0px 0px;
 }
-.answers
-{
+.answers{
     width: 400px;
     height: 400px;
     background-color: brown;
 }
-.map
-{
+.map{
     width: 400px;
     height: 400px;
     background-color: lightcoral;
 }
 
-#block_three
-{
+
+
+
+
+
+
+
+
+
+#links{
     display: flex;
-
-    width: 300px;
-    height: 300px;
+    justify-content: space-around;
+    align-items: center;
     border: 1px solid black;
+    width: 100%;
+    height: 100px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    bottom: 0px;
+    left: 0px;
+    
 }
-
-.input
-{
+.github{
     border: 1px solid black;
-    text-align: center;
-    font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.5em;
-    color: blueviolet;
-    padding: 10px 10px 10px 10px;
-    margin: 10px 10px 10px 10px;
+    width: 100px;
+    height: 100px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+.oc{
+    border: 1px solid black;
+    width: 150px;
+    height: 100px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+.workplace{
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+.email{
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
