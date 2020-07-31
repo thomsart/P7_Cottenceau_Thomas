@@ -30,7 +30,6 @@
 
 
 
-
 #block_two{
     display: flex;
     border: 1px solid 400px;
@@ -41,28 +40,35 @@
     padding: 0px 50px 0px 0px;
 }
 .answers{
+    border: 3px solid black;
+    border-radius: 60px;
     width: 400px;
     height: 400px;
-    background-color: brown;
+    padding: 0px 50px 0px 0px;
+    background-color: white;
 }
 .map{
-    width: 400px;
+    width: 800px;
     height: 400px;
-    background-color: lightcoral;
+    background-color: greenyellow;
 }
-
-
-
-
-
-
+.input_user{
+    border: 3px solid black;
+    border-radius: 60px;
+    position: absolute;
+    top: 56%;
+    left: 54%;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+}
 
 
 
 
 #links{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     border: 1px solid black;
     width: 100%;
