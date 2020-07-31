@@ -39,30 +39,25 @@
     height: 400px;
     padding: 0px 50px 0px 0px;
 }
-.answers{
-    border: 3px solid black;
-    border-radius: 60px;
+.grandpy{
     width: 400px;
     height: 400px;
-    padding: 0px 50px 0px 0px;
+    padding: 0px 0px 0px 0px;
     background-color: white;
 }
+.user{
+    border: 1px solid black;
+    width: 350px;
+    height: 100px;
+    margin: 300px 0px 0px 0px;
+    background-color: white;
+
+}
 .map{
-    width: 800px;
+    width: 1000px;
     height: 400px;
     background-color: greenyellow;
 }
-.input_user{
-    border: 3px solid black;
-    border-radius: 60px;
-    position: absolute;
-    top: 56%;
-    left: 54%;
-    width: 200px;
-    height: 200px;
-    background-color: white;
-}
-
 
 
 
