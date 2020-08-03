@@ -1,9 +1,9 @@
 #block_page{
-    border: 1px solid black;
+    border: 1px solid white;
 }
 
 .title{
-    border: 1px solid black;
+    border: 1px solid white;
     text-align: center;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
     font-size: 4em;
@@ -15,10 +15,10 @@
 
 
 #block_one{
-    border: 1px solid black;
+    border: 1px solid white;
 }
 .intro{
-    border: 1px solid black;
+    border: 1px solid white;
     text-align: center;
     line-height: 25px;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
@@ -35,37 +35,44 @@
     border: 1px solid 400px;
 }
 .png{
+    border: 1px solid black;
     width: 400px;
     height: 400px;
     padding: 0px 50px 0px 0px;
 }
 .grandpy{
-    width: 400px;
+    border: 1px solid black;
+    width: 300px;
     height: 400px;
     padding: 0px 0px 0px 0px;
     background-color: white;
 }
-.user{
+/* .user{
     border: 1px solid black;
-    width: 350px;
-    height: 100px;
-    margin: 300px 0px 0px 0px;
-    background-color: white;
-
-}
+    display: flex;
+    border: 1px solid 400px;
+    width: 300px;
+    height: 0px;
+    margin: 220px 0px 0px 0px;
+} */
+/* .user_input{
+    border: 1px solid black;
+    width: 250px;
+    height: 0px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+} */
 .map{
-    width: 1000px;
+    width: 400px;
     height: 400px;
     background-color: greenyellow;
 }
-
-
 
 #links{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid white;
     width: 100%;
     height: 100px;
     padding: 0px 0px 0px 0px;
@@ -75,28 +82,28 @@
     
 }
 .github{
-    border: 1px solid black;
+    border: 1px solid white;
     width: 100px;
     height: 100px;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
 .oc{
-    border: 1px solid black;
+    border: 1px solid white;
     width: 150px;
     height: 100px;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
 .workplace{
-    border: 1px solid black;
+    border: 1px solid white;
     width: 100px;
     height: 100px;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
 .email{
-    border: 1px solid black;
+    border: 1px solid white;
     width: 100px;
     height: 100px;
     padding: 0px 0px 0px 0px;
