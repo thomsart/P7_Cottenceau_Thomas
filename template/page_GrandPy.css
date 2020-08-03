@@ -34,20 +34,20 @@
     display: flex;
     border: 1px solid 400px;
 }
-.png{
+.grandpy{
     border: 1px solid black;
     width: 400px;
     height: 400px;
     padding: 0px 50px 0px 0px;
 }
-.grandpy{
+.grandpy_speech{
     border: 1px solid black;
-    width: 300px;
+    width: 450px;
     height: 400px;
     padding: 0px 0px 0px 0px;
     background-color: white;
 }
-/* .user{
+/* .user_ask{
     border: 1px solid black;
     display: flex;
     border: 1px solid 400px;
@@ -55,7 +55,7 @@
     height: 0px;
     margin: 220px 0px 0px 0px;
 } */
-/* .user_input{
+/* .input{
     border: 1px solid black;
     width: 250px;
     height: 0px;
