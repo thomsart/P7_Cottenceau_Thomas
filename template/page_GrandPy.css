@@ -12,13 +12,7 @@
     margin: 1px 0px 20px 1px;
 }
 
-
-
-#block_one{
-    border: 1px solid white;
-}
 .intro{
-    border: 1px solid white;
     text-align: center;
     line-height: 25px;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
@@ -27,41 +21,38 @@
     margin: 1px 0px 1px 0px;
 }
 
-
-
-
 #block_two{
     display: flex;
     border: 1px solid 400px;
 }
 .grandpy{
-    border: 1px solid black;
-    width: 400px;
-    height: 400px;
-    padding: 0px 50px 0px 0px;
-}
-.grandpy_speech{
-    border: 1px solid black;
     width: 450px;
     height: 400px;
     padding: 0px 0px 0px 0px;
-    background-color: white;
 }
-/* .user_ask{
-    border: 1px solid black;
-    display: flex;
-    border: 1px solid 400px;
-    width: 300px;
-    height: 0px;
-    margin: 220px 0px 0px 0px;
-} */
-/* .input{
-    border: 1px solid black;
+.grandpy_speech{
+    width: 465px;
+    height: 400px;
+    padding: 0px 0px 0px 0px;
+}
+.user_ask{
+    position: absolute;
     width: 250px;
-    height: 0px;
+    height: 200px;
+    top: 440px;
+    left: 700px;
+}
+
+.input{
+    position: relative;
+    width: 200px;
+    height: 100px;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
-} */
+    top: 30px;
+    left: 25px;
+}
+
 .map{
     width: 400px;
     height: 400px;
@@ -81,6 +72,7 @@
     left: 0px;
     
 }
+
 .github{
     border: 1px solid white;
     width: 100px;
@@ -88,6 +80,7 @@
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
+
 .oc{
     border: 1px solid white;
     width: 150px;
@@ -95,6 +88,7 @@
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
+
 .workplace{
     border: 1px solid white;
     width: 100px;
@@ -102,6 +96,7 @@
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
+
 .email{
     border: 1px solid white;
     width: 100px;
