@@ -8,7 +8,7 @@ db = SQLAlchemy(app)
 class Content(db.Model):
 
     id =  db.Column(db.Integer, primary_key=True)
-    speech = db.Column(db.string(100), nullable=False)
+    speech = db.Column(db.String(100), nullable=False)
 
     def __init__(self, grandpy_sentence):
         self.speech = grandpy_sentence
