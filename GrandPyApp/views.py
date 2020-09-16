@@ -1,12 +1,21 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify, request
 
-app = Flask(__name__)
+from . import app
+from .tools import put_to_upper_case
 
 app.config.from_object('config')
 
 @app.route('/')
 def index():
-    return render_template('pages/answers_GrandPy.html')
+    return render_template('layouts/default_GrandPy.html')
+
+@app.route('/ajax', methods=["POST"])
+def ajax():
+    user_text = request.form["userText"]
+    print
+    reponse = put_to_upper_case(user_text)
+    print("test", reponse)
+    return jsonify(reponse)
 
 
 # if __name__ == "__main__":

@@ -1,7 +1,5 @@
 from flask import Flask
 
-from .views import app
-from . import models
+app = Flask(__name__)
 
-# connect SQLAchemy to app
-models.db.init_app(app)
+from . import views
