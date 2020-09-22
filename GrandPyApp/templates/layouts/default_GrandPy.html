@@ -19,13 +19,6 @@
                 </h1>
             </header>
 
-
-
-
-
-
-
-
             <div id="block_one">
                 <p class="intro">
                     GranPy bot est ton cyber grand père,<br />
@@ -34,14 +27,6 @@
                     Il te contera son histoire et te montrera où il se trouve.
                 </p>
             </div>
-
-
-
-
-
-
-
-
 
             <div id="block_two" class="block_two">
                 <div class="grandpy_img">
@@ -61,6 +46,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
                 <div class="users_questions">
                     <form id="question">
                         <p>
@@ -69,6 +65,9 @@
                             <input type="submit" value="Go"></input>
                         </p>
                     </form>
+
+
+
 
 
                     <script type="text/javascript">
@@ -82,7 +81,7 @@
                             .then(response => response.json())
                             .catch(error => console.log(error));
                         }
-                        
+
                         userInput.addEventListener("submit", function (event) {
                             event.preventDefault();
                             postFormData("/ajax", new FormData(userInput))
@@ -91,22 +90,21 @@
                                 answerDiv.innerHTML = response.output_text;
                             })
                         });
-
-
                     </script>
+
+
+
+
+
+
+
+
+
+
                 </div>
                 <div class="map">
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
 
             <footer>
                 <div id="links">

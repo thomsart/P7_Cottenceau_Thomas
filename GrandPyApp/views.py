@@ -1,7 +1,9 @@
 from flask import Flask, render_template, jsonify, request
 
 from . import app
-from .tools import put_to_upper_case
+
+from .utilities.tools import put_to_upper_case
+
 
 app.config.from_object('config')
 
@@ -12,7 +14,6 @@ def index():
 @app.route('/ajax', methods=["POST"])
 def ajax():
     user_text = request.form["userText"]
-    print
     reponse = put_to_upper_case(user_text)
     print("test", reponse)
     return jsonify(reponse)
