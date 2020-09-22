@@ -33,7 +33,7 @@
                     <img src="static/images/papy_bot.png" alt="GrandPy_Bot" />
                 </div>
                 <div class="grandpy_bubble">
-                    <img src="static/images/bulle_papi.png" alt="answers" />
+                    <img src="static/images/bulle_papi.png" alt="the_bubble_for_grandpy" />
 
                     <article id="answers">
 
@@ -87,7 +87,7 @@
                             postFormData("/ajax", new FormData(userInput))
                             .then(response => {
                                 var answerDiv = document.getElementById("answers");
-                                answerDiv.innerHTML = response.output_text;
+                                answerDiv.innerHTML = response;
                             })
                         });
                     </script>
