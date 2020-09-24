@@ -3,8 +3,9 @@
 
 from flask import Flask, render_template, jsonify, request
 
-from . import app
 
+import config
+from . import app
 from .utilities.tools import *
 
 
@@ -12,7 +13,8 @@ app.config.from_object('config')
 
 @app.route('/')
 def index():
-    return render_template('layouts/default_GrandPy.html')
+    gmap_api_key = config.GOOGLEMAP_API_KEY
+    return render_template('layouts/default_GrandPy.html', gmap_api_key = gmap_api_key)
 
 @app.route('/ajax', methods=["POST"])
 def ajax():

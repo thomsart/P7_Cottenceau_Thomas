@@ -6,7 +6,7 @@
         <meta charset="utf-8" />
         <!-- <link rel="stylesheet" href="page_GrandPy.css" /> -->
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/page_GrandPy.css') }}" />
-        <title>GrandPy, Cottenceau Thomas</title>
+        <title>GrandPy-Cottenceau-Thomas</title>
     </head>
 
     <body>
@@ -44,19 +44,6 @@
                     </div>
                 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <div class="users_questions">
                     <form id="question">
                         <p>
@@ -66,12 +53,8 @@
                         </p>
                     </form>
 
-
-
-
-
                     <script type="text/javascript">
-                        let userInput = document.querySelector("#question");
+                        
                         function postFormData(url, data){
                             // we send the content of the form to the server
                             return fetch(url, {
@@ -82,6 +65,7 @@
                             .catch(error => console.log(error));
                         }
 
+                        let userInput = document.querySelector("#question");
                         userInput.addEventListener("submit", function (event) {
                             event.preventDefault();
                             postFormData("/ajax", new FormData(userInput))
@@ -92,18 +76,50 @@
                         });
                     </script>
 
-
-
-
-
-
-
-
-
-
                 </div>
-                <div class="map">
+                <div id="map">
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
 
             <footer>

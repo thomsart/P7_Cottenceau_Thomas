@@ -41,10 +41,11 @@
     padding: 0px 0px 0px 0px;
 }
 
-.map{
+#map{
+    border: 1px solid black;
     width: 400px;
     height: 400px;
-    background-color: greenyellow;
+    background-color: green;
 }
 
 #links{
