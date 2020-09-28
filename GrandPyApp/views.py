@@ -22,10 +22,15 @@ def ajax():
     result = take_off_useless_words(user_text)
     print("test => ",result)
     content = get_from_mediawiki(result)
-    content = jsonify(content)
+    content = jsonify(content, result)
+    
+    # content1 = {"place" : result, "text" : content}
+    # content2 = jsonify(content1)
+    # return print(content2)
 
     return content
-
+    
+        
 
 # if __name__ == "__main__":
 #     app.run(debug=True, port=5000)
