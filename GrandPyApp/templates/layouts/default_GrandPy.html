@@ -71,22 +71,14 @@
                             postFormData("/ajax", new FormData(userInput))
                             .then(response => {
                                 var answerDiv = document.getElementById("answers");
-                                answerDiv.innerHTML = response;
+                                answerDiv.innerHTML = response[0];
+                                initMap(response[1]);
                             })
-                            // .then(response => {
-                            //     initMap(response[1])
-                            // })
-                            initMap("tour effeil")
                         });
 
                     </script>
 
                 </div>
-
-
-
-
-
 
 
 

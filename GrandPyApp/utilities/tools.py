@@ -26,8 +26,8 @@ def take_off_useless_words(userInput):
             words_for_API += str(word) + " "
 
     words_for_API = words_for_API.replace("l'", "")
-    words_for_API = words_for_API.replace("d'", "")
     words_for_API = words_for_API.title()
+    words_for_API = words_for_API.replace("D'", "d'")
     words_for_API = words_for_API.replace("De", "de")
     words_for_API = words_for_API.replace("Du", "du")
 
