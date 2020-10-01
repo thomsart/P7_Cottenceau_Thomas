@@ -59,11 +59,4 @@ def get_from_mediawiki(subject):
             break
 
     return description
-
-def get_from_googleMap():
-    """This methode allow to GET from the API google map information we needs.
-    In this case we want the location of the research."""
-
-    url = "https://maps.googleapis.com/maps/api/js?key="+"gmap_api_key"+"&callback=initMap&libraries=places&v=weekly"
-
-    return url
+    
