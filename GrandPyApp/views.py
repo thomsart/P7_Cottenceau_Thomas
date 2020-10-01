@@ -24,10 +24,6 @@ def ajax():
     content = get_from_mediawiki(result)
     content = jsonify(content, result)
     
-    # content1 = {"place" : result, "text" : content}
-    # content2 = jsonify(content1)
-    # return print(content2)
-
     return content
     
         
