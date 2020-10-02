@@ -9,7 +9,7 @@ from . import app
 from .utilities.tools import *
 
 
-app.config.from_object('config')
+app_flask.config.from_object('config')
 
 @app.route('/')
 def index():
