@@ -9,8 +9,11 @@ from .constant import *
 
 
 def take_off_useless_words(userInput):
-    """This methode is used to take-off all words we don't need to do our
-    request on the API MediaWiki"""
+
+    """
+    This methode is used to take-off all words we don't need to do our
+    request on the API MediaWiki.
+    """
 
     try:
         userInput = str(userInput)
@@ -36,8 +39,11 @@ def take_off_useless_words(userInput):
 ###############################################################################
 
 def get_from_mediawiki(subject):
-    """This methode allow to GET from the API MediaWiki information we needs.
-    In this case we want the description of the research."""
+
+    """
+    This methode allow to GET from the API MediaWiki information we needs.
+    In this case we want the description of the research.
+    """
 
     url = "https://fr.wikipedia.org/w/api.php?action=query&titles="+subject+"&prop=extracts&exsentences=10&format=json&explaintext"
     answer = requests.get(url)
