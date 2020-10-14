@@ -8,6 +8,7 @@ import config
 from . import app
 from .utilities.tools import *
 
+################################################################################
 
 app.config.from_object('config')
 
@@ -21,12 +22,11 @@ def ajax():
     user_text = request.form["userText"]
     result = take_off_useless_words(user_text)
     print("test => ",result)
-    content = get_from_mediawiki(result)
-    content = jsonify(content, result)
+    article = get_from_mediawiki(result)
+    article = cut_article(article)
+    article = jsonify(article, result)
     
-    return content
+    return article
     
         
-
-# if __name__ == "__main__":
-#     app.run(debug=True, port)
+################################################################################

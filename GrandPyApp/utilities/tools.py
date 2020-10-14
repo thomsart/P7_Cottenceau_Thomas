@@ -8,11 +8,12 @@ import requests
 from .constant import *
 
 
-def take_off_useless_words(userInput):
+################################################################################
 
+def take_off_useless_words(userInput):
     """
-    This methode is used to take-off all words we don't need to do our
-    request on the API MediaWiki.
+    This methode is used to take-off all words we don't need to do our request
+    on the API MediaWiki.
     """
 
     try:
@@ -27,8 +28,7 @@ def take_off_useless_words(userInput):
             pass
         else:
             words_for_API += str(word) + " "
-
-    words_for_API = words_for_API.replace("l'", "")
+     
     words_for_API = words_for_API.title()
     words_for_API = words_for_API.replace("D'", "d'")
     words_for_API = words_for_API.replace("De", "de")
@@ -36,10 +36,9 @@ def take_off_useless_words(userInput):
 
     return words_for_API
 
-###############################################################################
+################################################################################
 
 def get_from_mediawiki(subject):
-
     """
     This methode allow to GET from the API MediaWiki information we needs.
     In this case we want the description of the research.
@@ -48,7 +47,7 @@ def get_from_mediawiki(subject):
     url = "https://fr.wikipedia.org/w/api.php?action=query&titles="+subject+"&prop=extracts&exsentences=10&format=json&explaintext"
     answer = requests.get(url)
     answer = answer.json()
-    text = ""
+    full_article = ""
     for key1, value1 in answer.items():
         if key1 == "query":
             for key2, value2 in value1.items():
@@ -56,13 +55,24 @@ def get_from_mediawiki(subject):
                     for key3, value3 in value2.items():
                         for key4, value4 in value3.items():
                             if key4 == 'extract':
-                                text += value4
-    description = ""
-    for letter in text:
+                                full_article += value4
+
+    return full_article
+    
+################################################################################
+
+def cut_article(full_article):
+    """
+    We want to cut the text that the request provides because it's too long.
+    """
+
+    description =  ""
+    for letter in full_article:
         if letter != "=":
             description += letter
         else:
             break
 
     return description
-    
+
+################################################################################
