@@ -25,7 +25,7 @@ def ajax():
     article = get_from_mediawiki(result)
     article = cut_article(article)
     article = jsonify(article, result)
-    
+
     return article
     
         

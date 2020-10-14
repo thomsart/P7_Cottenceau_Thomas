@@ -5,7 +5,7 @@ from flask import Flask, render_template, jsonify, request
 
 import requests
 
-from .constant import *
+import constant as cts
 
 
 ################################################################################
@@ -24,7 +24,7 @@ def take_off_useless_words(userInput):
     words_for_API = ""
     user_input = userInput.split(" ")
     for word in user_input:
-        if word in stop_french_words:
+        if word in cts.stop_french_words:
             pass
         else:
             words_for_API += str(word) + " "
