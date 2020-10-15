@@ -5,7 +5,7 @@ from flask import Flask, render_template, jsonify, request
 
 import requests
 
-import constant as cts
+from GrandPyApp.utilities import constants as cts
 
 
 ################################################################################
