@@ -34,9 +34,17 @@
     height: 400px;
     padding: 0px 0px 0px 0px;
 }
-.grandpy_bubble{
+
+.speech_zone{
     border: 1px solid black;
-    width: 465px;
+    width: 450px;
+    height: 400px;
+    padding: 0px 0px 0px 0px;
+}
+
+#answers{
+    border: 1px solid black;
+    width: 450px;
     height: 400px;
     padding: 0px 0px 0px 0px;
 }
@@ -70,15 +78,7 @@
     margin: 0px 0px 0px 0px;
 }
 
-.oc{
-    border: 1px solid black;
-    width: 150px;
-    height: 100px;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-}
-
-.workplace{
+.facebook{
     border: 1px solid black;
     width: 100px;
     height: 100px;

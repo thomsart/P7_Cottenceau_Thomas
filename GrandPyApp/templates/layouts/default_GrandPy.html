@@ -28,57 +28,79 @@
                 </p>
             </div>
 
-            <div id="block_two" class="block_two">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="block_two">
+
                 <div class="grandpy_img">
                     <img src="static/images/papy_bot.png" alt="GrandPy_Bot" />
                 </div>
-                <div class="grandpy_bubble">
-                    <img src="static/images/bulle_papi.png" alt="the_bubble_for_grandpy" />
 
-                    <article id="answers">
+                <div class="speech_zone">
 
-                    </article>
-
-                    <div class="users_bubble">
-                        <img src="static/images/bulle_user.png" alt="questions" />
-                    </div>
-                </div>
-
-                <div class="users_questions">
                     <form id="question">
                         <p>
-                            <!-- <label for="msg">A toi de jouer!</label> -->
                             <input type="text" id="userText" name="userText" placeholder="poses ta question ici"></input>
                             <input type="submit" value="Go"></input>
                         </p>
                     </form>
 
-                    <script type="text/javascript">
+                    <article id="answers">
+                        <script type="text/javascript">
 
-                        function postFormData(url, data){
-                            // we send the content of the form to the server
-                            return fetch(url, {
-                                method: "POST",
-                                body: data
-                            })
-                            .then(response => response.json())
-                            .catch(error => console.log(error));
-                        }
-
-                        let userInput = document.querySelector("#question");
-                        userInput.addEventListener("submit", function (event) {
-                            event.preventDefault();
-                            postFormData("/ajax", new FormData(userInput))
-                            .then(response => {
-                                var answerDiv = document.getElementById("answers");
-                                answerDiv.innerHTML = response[0];
-                                initMap(response[1]);
-                            })
-                        });
-
-                    </script>
+                            function postFormData(url, data){
+                                // we send the content of the form to the server
+                                return fetch(url, {
+                                    method: "POST",
+                                    body: data
+                                })
+                                .then(response => response.json())
+                                .catch(error => console.log(error));
+                            }
+    
+                            let userInput = document.querySelector("#question");
+                            userInput.addEventListener("submit", function (event) {
+                                event.preventDefault();
+                                postFormData("/ajax", new FormData(userInput))
+                                .then(response => {
+                                    var answerDiv = document.getElementById("answers");
+                                    answerDiv.innerHTML = response[0];
+                                    initMap(response[1]);
+                                })
+                            });
+    
+                        </script>
+                    </article>
 
                 </div>
+
+             
+
+
+
+
+
+
 
 
 
@@ -86,6 +108,7 @@
 
                 <div id="map">
                 </div>
+
 
                 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
                 <script src="https://maps.googleapis.com/maps/api/js?key={{gmap_api_key}}&callback=initMap&libraries=places&v=weekly"defer></script>
@@ -139,22 +162,38 @@
 
 
 
-
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <footer>
                 <div id="links">
                     <div class="github">
-                        <img src="static/images/github.png" alt="github" />
+                        <a href="https://github.com/thomsart/P7_Cottenceau_Thomas"><img src="static/images/github.png" alt="github" /></a>
                     </div>
-                    <div class="oc">
-                        <img src="static/images/oc.png" alt="openclassrooms" />
-                    </div>
-                    <div class="workplace">
-                        <img src="static/images/workplace.png" alt="workplace" />
+                    <div class="facebook">
+                        <a href="https://www.facebook.com/thomas.cottenceau"><img src="static/images/facebook.png" alt="facebook" /></a>
                     </div>
                     <div class="email">
-                        <img src="static/images/gmail.png" alt="email" />
+                        <a href="mailto:psychoid@hotmail.fr"  ><img src="static/images/gmail.png" alt="email" /></a>
                     </div>
                 </div>
             </footer>
