@@ -21,15 +21,26 @@ def take_off_useless_words(userInput):
     except ValueError:
         print("Ce ne sont pas des mots")
 
+    userInput = userInput.lower()
+    userInputClean = ""
+    ponctuation = [".",",",";",":","-","_","!","?"]
+    for el in userInput:
+        if el in ponctuation:
+            continue
+        else:
+            userInputClean += el
+
+    userInputClean = userInputClean.split(" ")
+
     words_for_API = ""
-    user_input = userInput.split(" ")
-    for word in user_input:
+    for word in userInputClean:
         if word in cts.stop_french_words:
             pass
         else:
             words_for_API += str(word) + " "
-     
+
     words_for_API = words_for_API.title()
+    words_for_API = words_for_API.replace("L'", "")
     words_for_API = words_for_API.replace("D'", "d'")
     words_for_API = words_for_API.replace("De", "de")
     words_for_API = words_for_API.replace("Du", "du")
