@@ -35,7 +35,7 @@ def take_off_useless_words(userInput):
     words_for_API = ""
     for word in userInputClean:
         if word in cts.stop_french_words:
-            pass
+            continue
         else:
             words_for_API += str(word) + " "
 
