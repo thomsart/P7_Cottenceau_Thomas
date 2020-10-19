@@ -23,7 +23,7 @@ def take_off_useless_words(userInput):
 
     userInput = userInput.lower()
     userInputClean = ""
-    ponctuation = [".",",",";",":","-","_","!","?"]
+    ponctuation = [".",",",";",":","_","!","?"]
     for el in userInput:
         if el in ponctuation:
             continue

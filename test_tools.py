@@ -14,7 +14,7 @@ def test_take_off_useless_words():
     The idea is to verify if what come out from this function is still what
     we want.
     """
-    assert tools.take_off_useless_words("testing text : D',De,Du") == "Testing Text : d',de,du "
+    assert tools.take_off_useless_words("TESTING TEXT: D',De,Du;!?.") == "Testing Text d'dedu "
 
 ################################################################################
 
