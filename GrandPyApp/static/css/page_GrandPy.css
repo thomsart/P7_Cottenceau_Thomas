@@ -27,12 +27,34 @@
     display: flex;
 }
 
-.grandpy_img{
+/* .grandpy_img{
     border: 1px solid white;
     width: 450px;
     height: 400px;
     padding: 0px 0px 0px 0px;
-}
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -67,7 +89,8 @@
 
 
 .container{
-    max-width: 100 !important;
+    border: 1px solid black;
+    max-width: 100%;
     margin: auto;
     margin-top: 4%;
     font-family: sans-serif;
@@ -100,27 +123,62 @@
 .active h4{
     font-size: 20px;
     margin-left: 10px;
-    color: #fff;
+    color: black;
 }
 
 .chat-page{
+    border: 1px solid black;
     padding: 0 0 50px 0;
 }
 
 .msg-inbox{
-    border: 1px solid #ccc;
+    border: 1px solid black;
     overflow: hidden;
     padding-bottom: 30px;
 }
 
 .chats{
+    border: 1px solid red;
     padding: 30px 15px 0 25px;
 }
 
 .msg-page{
-    height: 516px;
+    border: 1px solid blue;
+    height: 500px;
     overflow-y: auto;
 }
+
+.outgoing-chats{
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+    width: 92%;
+}
+
+.outgoing-chats-msg{
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+    width: 92%;
+}
+
+.outgoing-msg-inbox{
+    width: 30%;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .received-msg{
     display: inline-block;
@@ -129,12 +187,8 @@
     width: 92%;
 }
 
-.received-msg-inbox{
-    width: 57%;
-}
-
 .received-msg-inbox p{
-    background: #efefef none repeat scroll 0 0;
+    background: #f0f0f0 none repeat scroll 0 0;
     border-radius: 10px;
     color: #646464;
     font-size: 14px;
@@ -143,6 +197,16 @@
     width: 100%;
 }
 
+.outgoing-chats{
+    overflow: hidden;
+    margin: 26px 20px;
+}
+
+.outgoing-chats-msg {
+    float: left;
+    width: 46%;
+    margin-left: 45%;
+}
 
 
 
@@ -167,14 +231,7 @@
 
 
 
-
-
-
-
-
-
-
-.speech_zone{
+/* .speech_zone{
     border: 1px solid white;
     width: 600px;
     height: 400px;
@@ -191,7 +248,12 @@
     width: 450px;
     height: 350px;
     padding: 0px 0px 0px 0px;
-}
+} */
+
+
+
+
+
 
 
 
