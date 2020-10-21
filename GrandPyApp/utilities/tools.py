@@ -54,8 +54,8 @@ def get_from_mediawiki(subject):
     This methode allow to GET from the API MediaWiki information we needs.
     In this case we want the description of the research.
     """
-
-    url = "https://fr.wikipedia.org/w/api.php?action=query&titles="+subject+"&prop=extracts&exsentences=10&format=json&explaintext"
+    url_search = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch=tour%20de%pise&format=json"
+    url = "https://fr.wikipedia.org/w/api.php?action=query&titles="+subject+"&prop=extracts&exsentences=3&format=json&explaintext"
     answer = requests.get(url)
     answer = answer.json()
     full_article = ""

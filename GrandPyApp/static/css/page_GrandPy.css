@@ -87,7 +87,8 @@
     left: 0px;
 }
 
-.github{
+.github, .facebook, .email
+{
     border: 1px solid white;
     width: 100px;
     height: 100px;
@@ -95,18 +96,24 @@
     margin: 0px 0px 0px 0px;
 }
 
-.facebook{
-    border: 1px solid white;
-    width: 100px;
-    height: 100px;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+.question_div, .address_div, .answer_div
+{
+    padding: 2px 2px 2px 2px;
+    margin: 2px 2px 2px 2px;
+    border-radius: 5%;
 }
 
-.email{
-    border: 1px solid white;
-    width: 100px;
-    height: 100px;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+.question_div
+{
+    background-color: #adffaa;
+}
+
+.address_div
+{
+    background-color: #aacaff;
+}
+
+.answer_div
+{
+    background-color: #82b1ff;
 }
