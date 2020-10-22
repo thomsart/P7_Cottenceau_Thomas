@@ -21,21 +21,15 @@ userInput.addEventListener("submit", function (event) {
     event.preventDefault();
     postFormData("/ajax", new FormData(userInput))
     .then(response => {
-
-
-
         initMap(response[1], response[0]);
-
     })
 });
-
 
 let map;
 let service;
 let infowindow;
 
 function initMap(data, wikidata) {
-
     const paris = new google.maps.LatLng(48.85341, 2.3488);
     infowindow = new google.maps.InfoWindow();
     map = new google.maps.Map(document.getElementById("map"), {
@@ -65,10 +59,7 @@ function initMap(data, wikidata) {
         divMaker(questionDiv, place, "question_div");
         divMaker(addressDiv, address, "address_div");
         divMaker(answerDiv, wikidata, "answer_div");
-
     });
-    
-
 }
 
 function createMarker(place) {

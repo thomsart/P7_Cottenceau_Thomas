@@ -39,11 +39,12 @@ def take_off_useless_words(userInput):
         else:
             words_for_API += str(word) + " "
 
-    words_for_API = words_for_API.title()
-    words_for_API = words_for_API.replace("L'", "")
-    words_for_API = words_for_API.replace("D'", "d'")
-    words_for_API = words_for_API.replace("De", "de")
-    words_for_API = words_for_API.replace("Du", "du")
+    # words_for_API = words_for_API.title()
+    # words_for_API = words_for_API.replace("L'", "")
+    # words_for_API = words_for_API.replace("D'", "d'")
+    # words_for_API = words_for_API.replace("De", "de")
+    # words_for_API = words_for_API.replace("Du", "du")
+    # words_for_API = words_for_API.replace(" ", "%")
 
     return words_for_API
 
@@ -54,21 +55,39 @@ def get_from_mediawiki(subject):
     This methode allow to GET from the API MediaWiki information we needs.
     In this case we want the description of the research.
     """
-    url_search = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch=tour%20de%pise&format=json"
-    url = "https://fr.wikipedia.org/w/api.php?action=query&titles="+subject+"&prop=extracts&exsentences=3&format=json&explaintext"
-    answer = requests.get(url)
-    answer = answer.json()
-    full_article = ""
-    for key1, value1 in answer.items():
+
+    name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch="+subject+"&format=json"
+    name_url = requests.get(name_url)
+    name_url = name_url.json()
+    names = []
+    print(type(names))
+    for key1, value1 in name_url.items():
+        if key1 == "query":
+            for key2, value2 in value1.items():
+                if key2 == "search":
+                    for el in value2:
+                        for key3, value3 in el.items():
+                            if key3 == 'title':
+                                print(value3)
+                                names.append(value3)
+                                
+    name = str(names[0])
+    print(name)
+    article = ""
+    article_url = "https://fr.wikipedia.org/w/api.php?action=query&titles="+name+"&prop=extracts&exsentences=3&format=json&explaintext"
+    article_url = requests.get(article_url)
+    article_url = article_url.json()
+    article = ""
+    for key1, value1 in article_url.items():
         if key1 == "query":
             for key2, value2 in value1.items():
                 if key2 == "pages":
                     for key3, value3 in value2.items():
                         for key4, value4 in value3.items():
                             if key4 == 'extract':
-                                full_article += value4
+                                article += value4
 
-    return full_article
+    return article
     
 ################################################################################
 
