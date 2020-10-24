@@ -39,6 +39,11 @@
     padding: 0px 0px 0px 0px;
 }
 
+.fa{
+    float: right;
+    clear: right;
+}
+
 .speech_zone
 {
     border: 1px solid white;

@@ -22,7 +22,8 @@ def ajax():
     user_text = request.form["userText"]
     result = take_off_useless_words(user_text)
     print("test => ",result)
-    article = get_from_mediawiki(result)
+    name = get_from_mediawiki_subject(result)
+    article = get_from_mediawiki_article(name)
     article = cut_article(article)
     article = jsonify(article, result)
 
