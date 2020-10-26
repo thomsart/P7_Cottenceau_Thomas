@@ -7,13 +7,6 @@
     text-shadow: 6px 6px 6px black;
     margin: 1px 0px 20px 1px;
 }
-@media screen and (max-width: 1024px)
-{
-    .title
-    {
-        font-size: 2em;
-    }
-}
 
 .intro
 {
@@ -23,13 +16,6 @@
     font-size: 1.5em;
     color: blueviolet;
     margin: 1px 0px 1px 0px;
-}
-@media screen and (max-width: 1024px)
-{
-    .intro
-    {
-        font-size: 1em;
-    }
 }
 
 #block_two
@@ -74,15 +60,14 @@
 {
     .speech_zone
     {
-        width: 100%;
-        height: 300px;
+        width: 90%;
     }
 }
 @media screen and (max-width: 1024px)
 {
     #userText
     {
-        width: 80%;
+        width: 90%;
     }
 }
 
@@ -129,15 +114,14 @@
 
 #map
 {
-    width: 400%;
+    width: 400px;
     height: 400px;
 }
 @media screen and (max-width: 1024px)
 {
     #map
     {
-        width: 100%;
-        height: 300px;
+        width: 90%;
     }
 }
 
