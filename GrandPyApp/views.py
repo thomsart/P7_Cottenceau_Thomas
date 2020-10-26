@@ -28,6 +28,5 @@ def ajax():
     article = jsonify(article, result)
 
     return article
-    
-        
+
 ################################################################################

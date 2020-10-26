@@ -1,22 +1,22 @@
-#block_page
-{
-    border: 1px solid white;
-}
-
 .title
 {
-    border: 1px solid white;
     text-align: center;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
-    font-size: 4em;
+    font-size: 3em;
     color: crimson;
     text-shadow: 6px 6px 6px black;
     margin: 1px 0px 20px 1px;
 }
+@media screen and (max-width: 1024px)
+{
+    .title
+    {
+        font-size: 2em;
+    }
+}
 
 .intro
 {
-    border: 1px solid white;
     text-align: center;
     line-height: 25px;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
@@ -24,38 +24,66 @@
     color: blueviolet;
     margin: 1px 0px 1px 0px;
 }
+@media screen and (max-width: 1024px)
+{
+    .intro
+    {
+        font-size: 1em;
+    }
+}
 
 #block_two
 {
-    border: 1px solid white;
     display: flex;
+    flex-direction: row;
+}
+@media screen and (max-width: 1024px)
+{
+    #block_two
+    {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-.grandpy_img
+#grandpy_img
 {
-    border: 1px solid white;
     width: 450px;
     height: 400px;
     padding: 0px 0px 0px 0px;
 }
-
-.fa{
-    float: right;
-    clear: right;
+@media screen and (max-width: 1024px)
+{
+    #grandpy_img
+    {
+        display: none;
+    }
 }
 
 .speech_zone
 {
-    border: 1px solid white;
     width: 450px;
     height: 400px;
-    padding: 0px 0px 0px 0px;
+    margin: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-#question
+@media screen and (max-width: 1024px)
 {
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+    .speech_zone
+    {
+        width: 100%;
+        height: 300px;
+    }
+}
+@media screen and (max-width: 1024px)
+{
+    #userText
+    {
+        width: 80%;
+    }
 }
 
 #answers
@@ -65,13 +93,6 @@
     height: 350px;
     padding: 0px 0px 0px 0px;
 }
-
-
-
-
-
-
-
 
 .question_div
 {
@@ -86,6 +107,7 @@
 
 .address_div, .answer_div
 {
+    font-size: 1em;
     display: inline-block;
     padding: 5px 5px 5px 5px;
     margin: 5px 5px 5px 5px;
@@ -93,18 +115,30 @@
     background-color: #98b5e2;
 }
 
+.loader
+{
+    position: absolute;
+    width: 50px;
 
+}
 
-
-
-
-
+.hidden
+{
+    display: none;
+}
 
 #map
 {
-    border: 1px solid white;
-    width: 400px;
+    width: 400%;
     height: 400px;
+}
+@media screen and (max-width: 1024px)
+{
+    #map
+    {
+        width: 100%;
+        height: 300px;
+    }
 }
 
 #links

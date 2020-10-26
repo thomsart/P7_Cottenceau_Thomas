@@ -1,9 +1,16 @@
+const box = document.querySelector(".speech_zone");
+
+const loader = document.querySelector(".loader");
+loader.className += " hidden";
+
 var answers = document.getElementById("answers");
 
 function divMaker(div, value, class_name){
     div.innerHTML = value;
     div.className = class_name;
     answers.appendChild(div);
+    loader.className += " hidden";
+
 }
 
 function postFormData(url, data){
@@ -23,6 +30,10 @@ userInput.addEventListener("submit", function (event) {
     .then(response => {
         initMap(response[1], response[0]);
     })
+    .then(data => {
+        loader.className -= " hidden";
+    })
+
 });
 
 let map;
