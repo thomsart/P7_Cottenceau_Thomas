@@ -1,25 +1,30 @@
 .title
 {
+    border: 1px solid black;
     text-align: center;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
     font-size: 3em;
     color: crimson;
     text-shadow: 6px 6px 6px black;
-    margin: 1px 0px 20px 1px;
+    margin: 0px 0px 0px 0px;
 }
 
 .intro
 {
+    border: 1px solid black;
     text-align: center;
-    line-height: 25px;
+    line-height: 1em;
     font-family: Comic Sans MS, Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5em;
     color: blueviolet;
-    margin: 1px 0px 1px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 #block_two
 {
+    border: 1px solid black;
+    width: 100%;
+    height: 30%;
     display: flex;
     flex-direction: row;
 }
@@ -34,9 +39,9 @@
 
 #grandpy_img
 {
-    width: 450px;
-    height: 400px;
-    padding: 0px 0px 0px 0px;
+    border: 1px solid black;
+    width: 40em;
+    height: 30em;
 }
 @media screen and (max-width: 1024px)
 {
@@ -48,9 +53,9 @@
 
 .speech_zone
 {
-    width: 450px;
-    height: 400px;
-    margin: 20px 20px 20px 20px;
+    border: 1px solid black;
+    width: 40em;
+    height: 30em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,29 +65,29 @@
 {
     .speech_zone
     {
-        width: 90%;
+        width: 100%;
     }
 }
 @media screen and (max-width: 1024px)
 {
     #userText
     {
-        width: 90%;
+        width: 100%;
     }
 }
 
+/* this is the div which contains the text */
 #answers
 {
+    border: 1px solid black;
     overflow: auto;
-    width: 450px;
-    height: 350px;
-    padding: 0px 0px 0px 0px;
+    width: 100%;
+    height: 100%;
 }
 
 .question_div
 {
-    padding: 5px 5px 5px 5px;
-    margin: 5px 5px 5px 5px;
+    padding: 5% 5% 5% 5%;
     border-radius: 3%;
     text-align: right;
     background-color: #c5a2e2;
@@ -94,8 +99,7 @@
 {
     font-size: 1em;
     display: inline-block;
-    padding: 5px 5px 5px 5px;
-    margin: 5px 5px 5px 5px;
+    padding: 5% 5% 5% 5%;
     border-radius: 5%;
     background-color: #98b5e2;
 }
@@ -103,7 +107,7 @@
 .loader
 {
     position: absolute;
-    width: 50px;
+    width: 10%;
 
 }
 
@@ -114,14 +118,14 @@
 
 #map
 {
-    width: 400px;
-    height: 400px;
+    width: 40em;
+    height: 30em;
 }
 @media screen and (max-width: 1024px)
 {
     #map
     {
-        width: 90%;
+        width: 100%;
     }
 }
 
@@ -131,11 +135,12 @@
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    height: 100px;
+    height: 10em;
+    padding: 0px 0px 0px 0px;
 }
 
 .github, .facebook, .email
 {
-    width: 100px;
-    height: 100px;
+    width: 10em;
+    height: 10em;
 }
