@@ -22,6 +22,7 @@ def take_off_useless_words(userInput):
         print("Ce ne sont pas des mots")
 
     userInput = userInput.lower()
+    userInput = userInput.replace("'", " ")
     userInputClean = ""
     ponctuation = [".",",",";",":","_","!","?"]
     for el in userInput:
@@ -39,16 +40,45 @@ def take_off_useless_words(userInput):
         else:
             words_for_API += str(word) + " "
 
+    words_for_API = words_for_API.title()
+
     return words_for_API
 
 ################################################################################
 
 def get_from_mediawiki_subject(subject):
+
+    name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch="+subject+"&format=json"
+    name_url = requests.get(name_url)
+    name_url = name_url.json()
+
+    for key1, value1 in name_url.items():
+        if key1 == "query":
+            for key2, value2 in value1.items():
+                if key2 == "search":
+                    if value2 == []:
+                        return False
+                    else:
+                        return True
+
+################################################################################
+
+def take_off_words(subject):
+
+    content = subject.split()
+    del content[0]
+    subject02 = " ".join(content)
+
+    return subject02
+
+################################################################################
+
+def get_from_mediawiki_good_name_subject(subject):
     """
     This methode allow to GET from the API MediaWiki information we needs.
     In this case we want the description of the research.
     """
-    
+
     names =[]
     name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch="+subject+"&format=json"
     name_url = requests.get(name_url)
@@ -65,26 +95,6 @@ def get_from_mediawiki_subject(subject):
     name = names[0]
 
     return name
-
-################################################################################
-
-# def get_from_mediawiki_subject(subject):
-    
-#     name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch="+subject+"&format=json"
-#     name_url = requests.get(name_url)
-#     name_url = name_url.json()
-#     names = []
-#     for key1, value1 in name_url.items():
-#         if key1 == "query":
-#             for key2, value2 in value1.items():
-#                 if key2 == "search":
-#                     for el in value2:
-#                         for key3, value3 in el.items():
-#                             if key3 == 'title':
-#                                 names.append(value3)
-#     name = names[0]
-    
-#     return name
 
 ################################################################################
 

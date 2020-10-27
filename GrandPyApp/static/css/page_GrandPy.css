@@ -61,6 +61,7 @@
     .speech_zone
     {
         width: 100%;
+        height: 30em;
     }
 }
 @media screen and (max-width: 1024px)
