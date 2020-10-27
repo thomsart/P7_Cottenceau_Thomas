@@ -15,6 +15,7 @@ function divMaker(div, value, class_name){
 
 function postFormData(url, data){
     // we send the content of the form to the server
+    loader.className -= " hidden";
     return fetch(url, {
         method: "POST",
         body: data
@@ -30,10 +31,6 @@ userInput.addEventListener("submit", function (event) {
     .then(response => {
         initMap(response[1], response[0]);
     })
-    .then(data => {
-        loader.className -= " hidden";
-    })
-
 });
 
 let map;

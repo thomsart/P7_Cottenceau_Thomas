@@ -118,8 +118,6 @@ def get_from_mediawiki_article(name):
                             if key4 == 'extract':
                                 article += value4
 
-    print(article)
-
     return article
     
 ################################################################################

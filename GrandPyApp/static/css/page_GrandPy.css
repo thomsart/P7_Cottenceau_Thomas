@@ -68,6 +68,7 @@
 {
     #userText
     {
+        font-size: 2em;
         width: 100%;
     }
 }
@@ -82,6 +83,7 @@
 
 .question_div
 {
+    font-size: 1em;
     border-radius: 3%;
     text-align: right;
     background-color: #c5a2e2;
@@ -90,22 +92,36 @@
     float: right;
     clear: right;
 }
+@media screen and (max-width: 1024px)
+{
+    .question_div
+    {
+        font-size: 2em;
+    }
+}
 
 .address_div, .answer_div
 {
     font-size: 1em;
     display: inline-block;
-    border-radius: 5%;
+    border-radius: 3%;
     background-color: #98b5e2;
     margin: 1% 1% 1% 1%;
     padding: 1% 1% 1% 1%;
 }
+@media screen and (max-width: 1024px)
+{
+    .address_div, .answer_div
+    {
+        font-size: 2em;
+    }
+}
+
 
 .loader
 {
     position: absolute;
-    width: 10%;
-
+    width: 15%;
 }
 
 .hidden
