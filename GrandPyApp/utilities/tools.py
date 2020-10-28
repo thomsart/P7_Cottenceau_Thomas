@@ -10,10 +10,41 @@ from GrandPyApp.utilities import constants as cts
 
 ################################################################################
 
-def take_off_useless_words(userInput):
+"""
+In this module we have all the fonctions we need to make the applicatin working.
+The treatements of the inputs and the query of API.
+"""
+
+################################################################################
+
+def input_empty():
+
     """
-    This methode is used to take-off all words we don't need to do our request
-    on the API MediaWiki.
+    In this case of application the first reflex is to check if the user didn't
+    tape entry with nothing inside the form. And if it's the case we return an 
+    alert to him.
+    """
+
+    return "Tu ne me demande rien la mon petit ! Allez ne sois pas timide je t'écoute..."
+
+################################################################################
+
+def unfound_subject():
+
+    """
+    If the
+    """
+
+    return "Heuuu je suis desolé mon petit, mais la tu me poses une colle !"
+
+################################################################################
+
+def take_off_useless_words(userInput):
+
+    """
+    This methode is used to take-off all words or ponctuation we don't need to do
+    our request to the API MediaWiki. It allow us to do a first clean of words
+    which can be a problem in the query to the API.
     """
 
     try:
@@ -48,6 +79,14 @@ def take_off_useless_words(userInput):
 
 def get_from_mediawiki_subject(subject):
 
+    """
+    This fonction send a first query to the API MediaWiki to verify if what we
+    are searching exist with this way to write it. If not we'll take off some
+    words with an other fonction untill we get something relevant. Indeed
+    sometimes if you don't write properly the query of a subject you can get
+    stranges results.
+    """
+
     name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch="+subject+"&format=json"
     name_url = requests.get(name_url)
     name_url = name_url.json()
@@ -65,18 +104,24 @@ def get_from_mediawiki_subject(subject):
 
 def take_off_words(subject):
 
+    """
+    Depending the result of our first query to mediawiki we use this fonction to
+    take-off words after words before each query to get something from mediawiki.
+    """
+
     content = subject.split()
     del content[0]
-    subject02 = " ".join(content)
+    new_query = " ".join(content)
 
-    return subject02
+    return new_query
 
 ################################################################################
 
 def get_from_mediawiki_good_name_subject(subject):
+
     """
-    This methode allow to GET from the API MediaWiki information we needs.
-    In this case we want the description of the research.
+    When we finally found the subject we take the good orthograph of it in the
+    result(json) of the query to mediawiki.
     """
 
     names =[]
@@ -99,9 +144,11 @@ def get_from_mediawiki_good_name_subject(subject):
 ################################################################################
 
 def get_from_mediawiki_article(name):
+
     """
-    This methode allow to GET from the API MediaWiki information we needs.
-    In this case we want the description of the research.
+    Now we get the good orthographe or way to send the query we use this function
+    to get from MediaWiki information we needs. In our case the description of
+    the subject.
     """
 
     article = ""
@@ -123,8 +170,9 @@ def get_from_mediawiki_article(name):
 ################################################################################
 
 def cut_article(full_article):
+
     """
-    We want to cut the text that the request provides because it's too long.
+    We don't want to post the whole article which can be very long.
     """
 
     description =  ""
@@ -135,5 +183,3 @@ def cut_article(full_article):
             break
 
     return description
-
-################################################################################
