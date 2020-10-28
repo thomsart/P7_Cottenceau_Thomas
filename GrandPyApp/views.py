@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify
 
 
 import config
@@ -26,28 +26,33 @@ def ajax():
         result = take_off_useless_words(user_text)
         print("test => ",result)
         name = get_from_mediawiki_subject(result)
+        print(name)
 
-        while name == False:
-            result = take_off_words(result)
-            name = get_from_mediawiki_subject(result)
+        if name == True:
+            good_name = get_from_mediawiki_good_name_subject(result)
+            article = get_from_mediawiki_article(good_name)
+            article = cut_article(article)
+            json = jsonify(article, result)
+            return json
 
-            if result != "":
-                print("le resultat est maintenant: ", result)
-                good_name = get_from_mediawiki_good_name_subject(result)
-                article = get_from_mediawiki_article(good_name)
-                article = cut_article(article)
-                json = jsonify(article, result)
-                return json
+        else:
+            while name == False:
+                result = take_off_words(result)
+                name = get_from_mediawiki_subject(result)
 
-            else:
-                print("pas de resultat")
-                result = unfound_subject()
-                json = jsonify(result, result)
-                return json
+                if result != "" and name == True:
+                    good_name = get_from_mediawiki_good_name_subject(result)
+                    article = get_from_mediawiki_article(good_name)
+                    article = cut_article(article)
+                    json = jsonify(article, result)
+                    return json
+
+                elif result == "":
+                    result = unfound_subject()
+                    json = jsonify(result, result)
+                    return json
+
     else:
-        print("input vide")
-        result = input_empty()
+        result = empty_input()
         json = jsonify(result, result)
         return json
-
-################################################################################

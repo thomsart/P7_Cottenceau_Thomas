@@ -15,7 +15,7 @@ The treatements of the inputs and the query of API.
 
 ################################################################################
 
-def input_empty():
+def empty_input():
 
     """
     In this case of application the first reflex is to check if the user didn't
@@ -30,7 +30,7 @@ def input_empty():
 def unfound_subject():
 
     """
-    If the
+    If the we don't find a subject we return this allert.
     """
 
     return "Heuuu je suis desolé mon petit, mais la tu me poses une colle ! Verifies si tu ne fais pas de faute dans ta question."
@@ -123,6 +123,7 @@ def get_from_mediawiki_good_name_subject(subject):
     """
 
     names =[]
+    print(names)
     name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch="+subject+"&format=json"
     name_url = requests.get(name_url)
     name_url = name_url.json()
