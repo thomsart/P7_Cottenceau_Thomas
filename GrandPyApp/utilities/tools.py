@@ -8,8 +8,6 @@ import requests
 from GrandPyApp.utilities import constants as cts
 
 
-################################################################################
-
 """
 In this module we have all the fonctions we need to make the applicatin working.
 The treatements of the inputs and the query of API.
@@ -35,7 +33,7 @@ def unfound_subject():
     If the
     """
 
-    return "Heuuu je suis desolé mon petit, mais la tu me poses une colle !"
+    return "Heuuu je suis desolé mon petit, mais la tu me poses une colle ! Verifies si tu ne fais pas de faute dans ta question."
 
 ################################################################################
 

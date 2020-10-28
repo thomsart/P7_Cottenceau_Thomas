@@ -29,29 +29,25 @@ def ajax():
 
         while name == False:
             result = take_off_words(result)
+            name = get_from_mediawiki_subject(result)
 
             if result != "":
                 print("le resultat est maintenant: ", result)
-                name = get_from_mediawiki_subject(result)
                 good_name = get_from_mediawiki_good_name_subject(result)
                 article = get_from_mediawiki_article(good_name)
                 article = cut_article(article)
                 json = jsonify(article, result)
-
                 return json
 
             else:
+                print("pas de resultat")
                 result = unfound_subject()
                 json = jsonify(result, result)
-
                 return json
-
-            
-
     else:
+        print("input vide")
         result = input_empty()
         json = jsonify(result, result)
-
-    return json
+        return json
 
 ################################################################################
