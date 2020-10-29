@@ -26,11 +26,11 @@ def ajax():
         result = take_off_useless_words(user_text)
         print("test => ",result)
         name = get_from_mediawiki_subject(result)
-        print(name)
 
         if name == True:
             good_name = get_from_mediawiki_good_name_subject(result)
             article = get_from_mediawiki_article(good_name)
+            print(article)
             article = cut_article(article)
             json = jsonify(article, result)
             return json

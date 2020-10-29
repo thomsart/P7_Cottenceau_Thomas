@@ -32,9 +32,9 @@ def test_take_off_useless_words():
 
 ################################################################################
 
-# def test_get_from_mediawiki_subject():
+def test_get_from_mediawiki_subject():
 
-#     assert tools.get_from_mediawiki_good_name_subject() == 
+    assert tools.get_from_mediawiki_subject("Paris") == True
 
 ################################################################################
 
@@ -44,15 +44,17 @@ def test_take_off_words():
 
 ################################################################################
 
-# def test_get_from_mediawiki_good_name_subject():
+def test_get_from_mediawiki_good_name_subject():
 
-#     assert
+
+    assert tools.get_from_mediawiki_good_name_subject("paris") == "Paris"
 
 ################################################################################
 
-# def test_get_from_mediawiki_article():
+def test_get_from_mediawiki_article():
 
-#     assert
+    assert tools.get_from_mediawiki_article("Bougligny") == "Bougligny est une commune française située dans le département de Seine-et-Marne, en région Île-de-France.\nSes habitants sont appelés les Bouglignois. Au dernier recensement de 2017, la commune comptait 725 habitants."
+ 
 
 ################################################################################
 

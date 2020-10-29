@@ -123,7 +123,6 @@ def get_from_mediawiki_good_name_subject(subject):
     """
 
     names =[]
-    print(names)
     name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch="+subject+"&format=json"
     name_url = requests.get(name_url)
     name_url = name_url.json()
