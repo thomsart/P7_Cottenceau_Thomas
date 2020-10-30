@@ -29,10 +29,10 @@ tapant la commande suivante :<br>
 <em>pip install -r requirements.txt</em>
 
 4. Tapez la commande suivante pour lancer le server en local sur votre<br>
-machine afin de pouvoir l'éxécuter grâce à votre navigateur:
+machine afin de pouvoir l'éxécuter grâce à votre navigateur:<br>
 <em>python run.py</em>
 
-5. Enfin ouvrez votre navigateur et tapez y la commande suivante:
+5. Enfin ouvrez votre navigateur et tapez y la commande suivante:<br>
 <em>http://localhost:5000</em> (ici '5000' sur ma machine mais regardez le numéro du<br>
 votre dans le terminal lors de l'activation de votre server )
 
