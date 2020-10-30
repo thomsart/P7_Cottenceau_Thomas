@@ -46,7 +46,6 @@ def test_take_off_words():
 
 def test_get_from_mediawiki_good_name_subject():
 
-
     assert tools.get_from_mediawiki_good_name_subject("paris") == "Paris"
 
 ################################################################################
@@ -61,3 +60,5 @@ def test_get_from_mediawiki_article():
 def test_cut_article():
 
     assert tools.cut_article("This is a test == this part is supposed to be cut") == "This is a test "
+
+################################################################################

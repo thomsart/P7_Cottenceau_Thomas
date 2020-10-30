@@ -19,30 +19,33 @@ def empty_input():
 
     """
     In this case of application the first reflex is to check if the user didn't
-    tape entry with nothing inside the form. And if it's the case we return an 
-    alert to him.
+    tape entry with nothing inside the form. And if it's the case we return him
+    an alert.
     """
 
-    return "Tu ne me demande rien la mon petit ! Allez ne sois pas timide je t'écoute..."
+    return """Tu ne me demande rien la mon petit ! Allez ne sois pas timide 
+            je t'écoute..."""
 
 ################################################################################
 
 def unfound_subject():
 
     """
-    If the we don't find a subject we return this allert.
+    If the request to mediawiki API gives nothing we alert the user that maybe
+    he didn't wrote good is question. 
     """
 
-    return "Heuuu je suis desolé mon petit, mais la tu me poses une colle ! Verifies si tu ne fais pas de faute dans ta question."
+    return """Heuuu je suis desolé mon petit, mais la tu me poses une colle ! "
+            Verifies si tu ne fais pas de faute dans ta question."""
 
 ################################################################################
 
 def take_off_useless_words(userInput):
 
     """
-    This methode is used to take-off all words or ponctuation we don't need to do
-    our request to the API MediaWiki. It allow us to do a first clean of words
-    which can be a problem in the query to the API.
+    This methode is used to take-off all words or ponctuation we don't need to
+    do our request to the API MediaWiki. It allow us to do a first clean of
+    words which can be a problem in the query to the API.
     """
 
     try:
@@ -85,7 +88,7 @@ def get_from_mediawiki_subject(subject):
     stranges results.
     """
 
-    name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch="+subject+"&format=json"
+    name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + subject + "&format=json"
     name_url = requests.get(name_url)
     name_url = name_url.json()
 
@@ -123,9 +126,10 @@ def get_from_mediawiki_good_name_subject(subject):
     """
 
     names =[]
-    name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch="+subject+"&format=json"
+    name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + subject + "&format=json"
     name_url = requests.get(name_url)
     name_url = name_url.json()
+
     for key1, value1 in name_url.items():
         if key1 == "query":
             for key2, value2 in value1.items():
@@ -150,7 +154,7 @@ def get_from_mediawiki_article(name):
     """
 
     article = ""
-    article_url = "https://fr.wikipedia.org/w/api.php?action=query&titles="+name+"&prop=extracts&exsentences=3&format=json&explaintext"
+    article_url = "https://fr.wikipedia.org/w/api.php?action=query&titles=" + name + "&prop=extracts&exsentences=3&format=json&explaintext"
     article_url = requests.get(article_url)
     article_url = article_url.json()
 
