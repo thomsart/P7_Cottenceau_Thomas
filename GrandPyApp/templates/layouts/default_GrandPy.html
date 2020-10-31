@@ -4,11 +4,10 @@
 
     <head>
         <meta charset="utf-8" />
-        <!-- <link rel="stylesheet" href="page_GrandPy.css" /> -->
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/page_GrandPy.css') }}" media="all"/>
         <title>GrandPy-Cottenceau-Thomas</title>
     </head>
-        
+
     <body>
         <div id="bloc_page">
 
@@ -28,13 +27,10 @@
             </div>
 
             <div id="block_two">
-
                 <div id="grandpy_img">
                     <img src="static/images/papy_bot.png" alt="GrandPy_Bot" />
                 </div>
-
                 <div class="speech_zone">
-
                     <form id="question">
                         <p>
                             <input type="text" id="userText" name="userText" placeholder="poses ta question ici" size=50" maxlength="70"></input>
@@ -42,16 +38,11 @@
                         </p>
                         <img src="static/images/loader.gif" class="loader">
                     </form>
-
                     <article id="answers">
                     </article>
-
-                    
                 </div>
-
                 <div id="map">
                 </div>
-                
             </div>
 
             <footer>
@@ -76,7 +67,6 @@
     </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{gmap_api_key}}&callback=initMap&libraries=places&v=weekly"defer></script>
-
 
 </html>
 

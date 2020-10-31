@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import requests
+
 import pytest
 
 from GrandPyApp.utilities import tools
@@ -32,33 +34,56 @@ def test_take_off_useless_words():
 
 ################################################################################
 
-def test_get_from_mediawiki_subject():
+class MockResponse():
 
-    assert tools.get_from_mediawiki_subject("Paris") == True
+    @staticmethod
+    def json():
+        return cst.JSON_TEST
+
+def test_request_mediawiki_subject(monkeypatch):
+
+    def mock_request(mock):
+        return MockResponse()
+    
+    monkeypatch.setattr(requests, "get", mock_request)
+
+    mock_result = tools.request_mediawiki_subject("test")
+
+    assert mock_result["batchcomplete"] == ""
+
+################################################################################
+
+def test_check_if_subject():
+
+    assert tools.check_if_subject(cst.JSON_TEST) == True
 
 ################################################################################
 
 def test_take_off_words():
 
-    assert tools.take_off_words("This is a test") == "is a test"
+    assert tools.take_off_words("This is a Test") == "is a Test"
 
 ################################################################################
 
-def test_get_from_mediawiki_good_name_subject():
+def test_get_good_name_subject():
 
-    assert tools.get_from_mediawiki_good_name_subject("paris") == "Paris"
-
-################################################################################
-
-def test_get_from_mediawiki_article():
-
-    assert tools.get_from_mediawiki_article("Bougligny") == "Bougligny est une commune française située dans le département de Seine-et-Marne, en région Île-de-France.\nSes habitants sont appelés les Bouglignois. Au dernier recensement de 2017, la commune comptait 725 habitants."
- 
+    assert tools.get_good_name_subject(cst.JSON_TEST) == "Tour Eiffel"
 
 ################################################################################
 
-def test_cut_article():
+def test_request_mediawiki_article(monkeypatch):
 
-    assert tools.cut_article("This is a test == this part is supposed to be cut") == "This is a test "
+    def mock_request(mock):
+        return MockResponse()
+    
+    monkeypatch.setattr(requests, "get", mock_request)
+
+    mock_result = tools.request_mediawiki_article("test")
+
+    assert mock_result["batchcomplete"] == ""
 
 ################################################################################
+
+def test_take_n_cut_article():
+
+    assert tools.take_n_cut_article(cst.JSON_ARTICLE) == cst.FINAL_ARTICLE

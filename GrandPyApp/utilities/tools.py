@@ -23,8 +23,7 @@ def empty_input():
     an alert.
     """
 
-    return """Tu ne me demande rien la mon petit ! Allez ne sois pas timide 
-            je t'écoute..."""
+    return cts.GRANDPY_ALLERT_1
 
 ################################################################################
 
@@ -35,8 +34,7 @@ def unfound_subject():
     he didn't wrote good is question. 
     """
 
-    return """Heuuu je suis desolé mon petit, mais la tu me poses une colle ! "
-            Verifies si tu ne fais pas de faute dans ta question."""
+    return cts.GRANDPY_ALLERT_2
 
 ################################################################################
 
@@ -78,21 +76,32 @@ def take_off_useless_words(userInput):
 
 ################################################################################
 
-def get_from_mediawiki_subject(subject):
+def request_mediawiki_subject(subject):
 
     """
-    This fonction send a first query to the API MediaWiki to verify if what we
-    are searching exist with this way to write it. If not we'll take off some
-    words with an other fonction untill we get something relevant. Indeed
-    sometimes if you don't write properly the query of a subject you can get
-    stranges results.
+    This function take a name or even a question in argument (string one) and
+    send a request to the mediawiki in order to find something relevant.
     """
 
-    name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + subject + "&format=json"
-    name_url = requests.get(name_url)
-    name_url = name_url.json()
+    article_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + subject + "&format=json"
+    json_subject = requests.get(article_url)
+    json_subject = json_subject.json()
 
-    for key1, value1 in name_url.items():
+    return json_subject
+
+################################################################################
+
+def check_if_subject(json_subject):
+
+    """
+    After we got a json in return of the function "request_mediawiki_subject()"
+    the idea is to check if in the key named "search" there something. If it's
+    not the case it means that maybe the orthograph of the research is not
+    correct and in this case we return False and True if the "search" key
+    contains something.
+    """
+
+    for key1, value1 in json_subject.items():
         if key1 == "query":
             for key2, value2 in value1.items():
                 if key2 == "search":
@@ -106,31 +115,31 @@ def get_from_mediawiki_subject(subject):
 def take_off_words(subject):
 
     """
-    Depending the result of our first query to mediawiki we use this fonction to
-    take-off words after words before each query to get something from mediawiki.
+    Depending on the result of our first query to mediawiki we use this fonction
+    to take-off words after words before each query to get something from
+    mediawiki.
     """
 
     content = subject.split()
     del content[0]
-    new_query = " ".join(content)
+    new_name_subject = " ".join(content)
 
-    return new_query
+    return new_name_subject
 
 ################################################################################
 
-def get_from_mediawiki_good_name_subject(subject):
-
+def get_good_name_subject(json_subject):
+    
     """
-    When we finally found the subject we take the good orthograph of it in the
-    result(json) of the query to mediawiki.
+    If the return of the function "check_if_subject()" in True it means that we
+    have something relevant in our research and it's time to pick the correct
+    name of our research in the value of the key named "Title" in order to have
+    the good article the next time we'll request the mediawiki API with the
+    function named "request_mediawiki_article()".
     """
 
-    names =[]
-    name_url = "https://fr.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + subject + "&format=json"
-    name_url = requests.get(name_url)
-    name_url = name_url.json()
-
-    for key1, value1 in name_url.items():
+    names = []
+    for key1, value1 in json_subject.items():
         if key1 == "query":
             for key2, value2 in value1.items():
                 if key2 == "search":
@@ -139,43 +148,43 @@ def get_from_mediawiki_good_name_subject(subject):
                             if key3 == 'title':
                                 names.append(value3)
 
-    name = names[0]
+    good_name = names[0]
 
-    return name
+    return good_name
 
 ################################################################################
 
-def get_from_mediawiki_article(name):
+def request_mediawiki_article(good_name):
 
     """
-    Now we get the good orthographe or way to send the query we use this function
-    to get from MediaWiki information we needs. In our case the description of
-    the subject.
+    Now that we have the good name for our research we can finally do the
+    request to mediawiki to get the article and return it.
     """
 
-    article = ""
-    article_url = "https://fr.wikipedia.org/w/api.php?action=query&titles=" + name + "&prop=extracts&exsentences=3&format=json&explaintext"
-    article_url = requests.get(article_url)
-    article_url = article_url.json()
+    article_url = "https://fr.wikipedia.org/w/api.php?action=query&titles=" + good_name + "&prop=extracts&exsentences=3&format=json&explaintext"
+    json_article = requests.get(article_url)
+    json_article = json_article.json()
 
-    for key1, value1 in article_url.items():
+    return json_article
+
+################################################################################
+
+def take_n_cut_article(json_article):
+
+    """
+    Once we got the article we decide to cut it in order to don't charge to much
+    our application with useless informations.
+    """
+
+    full_article = ""
+    for key1, value1 in json_article.items():
         if key1 == "query":
             for key2, value2 in value1.items():
                 if key2 == "pages":
                     for key3, value3 in value2.items():
                         for key4, value4 in value3.items():
                             if key4 == 'extract':
-                                article += value4
-
-    return article
-    
-################################################################################
-
-def cut_article(full_article):
-
-    """
-    We don't want to post the whole article which can be very long.
-    """
+                                full_article += value4
 
     description =  ""
     for letter in full_article:

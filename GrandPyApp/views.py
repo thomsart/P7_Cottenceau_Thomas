@@ -25,25 +25,28 @@ def ajax():
     if user_text != "":
         result = take_off_useless_words(user_text)
         print("test => ",result)
-        name = get_from_mediawiki_subject(result)
+        subject = request_mediawiki_subject(result)
+        name = check_if_subject(subject)
 
         if name == True:
-            good_name = get_from_mediawiki_good_name_subject(result)
-            article = get_from_mediawiki_article(good_name)
-            print(article)
-            article = cut_article(article)
+            good_name = get_good_name_subject(subject)
+            article = request_mediawiki_article(good_name)
+            article = take_n_cut_article(article)
             json = jsonify(article, result)
             return json
 
         else:
             while name == False:
                 result = take_off_words(result)
-                name = get_from_mediawiki_subject(result)
+                name = request_mediawiki_subject(result)
+                name = check_if_subject(name)
 
                 if result != "" and name == True:
-                    good_name = get_from_mediawiki_good_name_subject(result)
-                    article = get_from_mediawiki_article(good_name)
-                    article = cut_article(article)
+                    good_name = request_mediawiki_subject(result)
+                    good_name = get_good_name_subject(good_name)
+                    article = request_mediawiki_article(good_name)
+                    print(article)
+                    article = take_n_cut_article(article)
                     json = jsonify(article, result)
                     return json
 
