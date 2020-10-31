@@ -27,6 +27,7 @@ def ajax():
         print("test => ",result)
         subject = request_mediawiki_subject(result)
         name = check_if_subject(subject)
+        print(name)
 
         if name == True:
             good_name = get_good_name_subject(subject)

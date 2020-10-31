@@ -18,13 +18,13 @@ The treatements of the inputs and the query of API.
 
 def test_empty_input():
 
-    assert tools.empty_input() == "Tu ne me demande rien la mon petit ! Allez ne sois pas timide je t'écoute..."
+    assert tools.empty_input() == cst.GRANDPY_ALLERT_1
 
 ################################################################################
 
 def test_unfound_subject():
 
-    assert tools.unfound_subject() == "Heuuu je suis desolé mon petit, mais la tu me poses une colle ! Verifies si tu ne fais pas de faute dans ta question."
+    assert tools.unfound_subject() == cst.GRANDPY_ALLERT_2
 
 ################################################################################
 

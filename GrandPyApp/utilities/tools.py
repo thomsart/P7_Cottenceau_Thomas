@@ -121,10 +121,13 @@ def take_off_words(subject):
     """
 
     content = subject.split()
-    del content[0]
-    new_name_subject = " ".join(content)
 
-    return new_name_subject
+    if content == []:
+        return ""
+    else:
+        del content[0]
+        new_name_subject = " ".join(content)
+        return new_name_subject
 
 ################################################################################
 
