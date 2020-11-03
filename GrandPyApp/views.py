@@ -6,7 +6,7 @@ from flask import Flask, render_template, jsonify
 
 import config
 from . import app
-from .utilities.tools import *
+from .utilities.classes import *
 
 ################################################################################
 
@@ -23,40 +23,39 @@ def ajax():
     user_text = request.form["userText"]
 
     if user_text != "":
-        result = take_off_useless_words(user_text)
+        result = Tools.take_off_useless_words(user_text)
         print("test => ",result)
-        subject = request_mediawiki_subject(result)
-        name = check_if_subject(subject)
+        subject = RequestMediaWiki.subject(result)
+        name = Json.check_if_subject(subject)
         print(name)
 
         if name == True:
-            good_name = get_good_name_subject(subject)
-            article = request_mediawiki_article(good_name)
-            article = take_n_cut_article(article)
+            good_name = Json.get_good_name_subject(subject)
+            article = RequestMediaWiki.article(good_name)
+            article = Json.take_n_cut_article(article)
             json = jsonify(article, result)
             return json
 
         else:
             while name == False:
-                result = take_off_words(result)
-                name = request_mediawiki_subject(result)
-                name = check_if_subject(name)
+                result = Tools.take_off_words(result)
+                name = RequestMediaWiki.subject(result)
+                name = Json.check_if_subject(name)
 
                 if result != "" and name == True:
-                    good_name = request_mediawiki_subject(result)
-                    good_name = get_good_name_subject(good_name)
-                    article = request_mediawiki_article(good_name)
-                    print(article)
-                    article = take_n_cut_article(article)
+                    good_name = RequestMediaWiki.subject(result)
+                    good_name = Json.get_good_name_subject(good_name)
+                    article = RequestMediaWiki.article(good_name)
+                    article = Json.take_n_cut_article(article)
                     json = jsonify(article, result)
                     return json
 
                 elif result == "":
-                    result = unfound_subject()
+                    result = Errors.unfound_subject()
                     json = jsonify(result, result)
                     return json
 
     else:
-        result = empty_input()
+        result = Errors.empty_input()
         json = jsonify(result, result)
         return json

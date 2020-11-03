@@ -1,11 +1,17 @@
+
 const box = document.querySelector(".speech_zone");
 
+// we create the loader.
 const loader = document.querySelector(".loader");
 loader.className += " hidden";
 
+// We select the container named answer to put later our div we create -
+// with the function divMaker.
 var answers = document.getElementById("answers");
 
 function divMaker(div, value, class_name){
+    // we create a function able to makes div in which we'll put the texts
+    // we'll get from the API
     div.innerHTML = value;
     div.className = class_name;
     answers.appendChild(div);
@@ -13,8 +19,9 @@ function divMaker(div, value, class_name){
 
 }
 
+// This function will be use to post what the user writes in the form.
 function postFormData(url, data){
-    // we send the content of the form to the server
+    // we send the content of the form to the server.
     loader.className -= " hidden";
     return fetch(url, {
         method: "POST",
@@ -24,6 +31,8 @@ function postFormData(url, data){
     .catch(error => console.log(error));
 }
 
+// Now we listen the form named question to use the function postFormData -
+// that we just create.
 let userInput = document.querySelector("#question");
 userInput.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -37,6 +46,8 @@ let map;
 let service;
 let infowindow;
 
+// Now we use the service to GoogleMap API that allows us to -
+// generate a map with the name of the place we parsed from the form.  
 function initMap(data, wikidata) {
     const paris = new google.maps.LatLng(48.85341, 2.3488);
     infowindow = new google.maps.InfoWindow();
@@ -59,6 +70,8 @@ function initMap(data, wikidata) {
             map.setCenter(results[0].geometry.location);
             var address = results[0].formatted_address;
         }
+
+        // We create the div we need to organise our Chat.
         var place = document.getElementById("userText").value;
         var questionDiv = document.createElement("div");
         var answerDiv = document.createElement("div");
@@ -70,6 +83,8 @@ function initMap(data, wikidata) {
     });
 }
 
+//  Always from the GoogleMap API we use the function which create
+// a marker i.e. the red logo we see on the map to select the place.
 function createMarker(place) {
     const marker = new google.maps.Marker({
         map,
