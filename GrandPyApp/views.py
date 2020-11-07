@@ -24,10 +24,8 @@ def ajax():
 
     if user_text != "":
         result = Tools.take_off_useless_words(user_text)
-        print("test => ",result)
         subject = RequestMediaWiki.subject(result)
         name = Json.check_if_subject(subject)
-        print(name)
 
         if name == True:
             good_name = Json.get_good_name_subject(subject)

@@ -16,7 +16,6 @@ function divMaker(div, value, class_name){
     div.className = class_name;
     answers.appendChild(div);
     loader.className += " hidden";
-
 }
 
 // This function will be use to post what the user writes in the form.
@@ -70,15 +69,21 @@ function initMap(data, wikidata) {
             map.setCenter(results[0].geometry.location);
             var address = results[0].formatted_address;
         }
-
+ 
         // We create the div we need to organise our Chat.
         var place = document.getElementById("userText").value;
         var questionDiv = document.createElement("div");
         var answerDiv = document.createElement("div");
         var addressDiv = document.createElement("div");
 
-        divMaker(questionDiv, place, "question_div");
-        divMaker(addressDiv, address, "address_div");
+        // If the user enter nthing or something which return nothing,
+        // address will be undefined and in this case there's no reason
+        // to create 'questionDiv' and 'addressDiv'.
+        if(address === undefined){   
+        }else{
+            divMaker(questionDiv, place, "question_div");
+            divMaker(addressDiv, address, "address_div");
+        }
         divMaker(answerDiv, wikidata, "answer_div");
     });
 }
@@ -95,3 +100,8 @@ function createMarker(place) {
         infowindow.open(map);
     });
 }
+
+
+// if (results[0] === undefined) {
+//     return console.log("ok pd"); 
+// }
