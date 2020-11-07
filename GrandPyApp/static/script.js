@@ -9,6 +9,7 @@ loader.className += " hidden";
 // with the function divMaker.
 var answers = document.getElementById("answers");
 
+
 function divMaker(div, value, class_name){
     // we create a function able to makes div in which we'll put the texts
     // we'll get from the API
@@ -17,6 +18,7 @@ function divMaker(div, value, class_name){
     answers.appendChild(div);
     loader.className += " hidden";
 }
+
 
 // This function will be use to post what the user writes in the form.
 function postFormData(url, data){
@@ -30,6 +32,7 @@ function postFormData(url, data){
     .catch(error => console.log(error));
 }
 
+
 // Now we listen the form named question to use the function postFormData -
 // that we just create.
 let userInput = document.querySelector("#question");
@@ -41,9 +44,11 @@ userInput.addEventListener("submit", function (event) {
     })
 });
 
+
 let map;
 let service;
 let infowindow;
+
 
 // Now we use the service to GoogleMap API that allows us to -
 // generate a map with the name of the place we parsed from the form.  
@@ -88,7 +93,8 @@ function initMap(data, wikidata) {
     });
 }
 
-//  Always from the GoogleMap API we use the function which create
+
+// Always from the GoogleMap API we use the function which create
 // a marker i.e. the red logo we see on the map to select the place.
 function createMarker(place) {
     const marker = new google.maps.Marker({
@@ -100,8 +106,3 @@ function createMarker(place) {
         infowindow.open(map);
     });
 }
-
-
-// if (results[0] === undefined) {
-//     return console.log("ok pd"); 
-// }
